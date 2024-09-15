@@ -1,0 +1,92 @@
+body{
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #2b2b2b, #1e1e1e);
+    background-color: #2b2b2b;
+    color: #ffffff;
+}
+#sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 70px);
+    grid-template-rows: repeat(9, 70px);
+    gap: 2px;
+    background-color: #3a3a3a;
+    border-radius: 1Opx;
+    padding: 15px;
+}
+
+#sudoku-grid input {
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    box-sizing:border-box;
+}
+
+#sudoku-grid input:focus {
+    border: 2px solid #007bff;
+}
+h1 {
+    color: #e0e0e0;
+}
+button {
+    margin-top: 40px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #5a5a5a;
+    color: white;
+    border: none;
+    padding:10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #767676;
+}
+input {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    border: 1px solid #666666;
+}
+
+/* Pour les chiffres déjà présents (inputs désactivés) */
+#sudoku-grid input:disabled {
+    color: #ffffff; /* couleur blanche */
+    font-weight: bold;
+}
+/* pour les chiffres ajoutés par l'utilisateur */
+#sudoku-grid input:not(:disabled) {
+    color:red; /* couleur verte */
+
+}
+/* bordures plus épaisses pour les blocs de 3x3 */
+#sudoku-grid input:nth-child(3n) {
+    border-right: 3px solid black;
+}
+#sudoku-grid input:nth-child(9n+1) {
+    border-left: 3px solid black;
+}
+#sudoku-grid input:nth-child(n+19):nth-child(-n+27),
+#sudoku-grid input:nth-child(n+46):nth-child(-n+54),
+#sudoku-grid input:nth-child(n+73):nth-child(-n+81) {
+    border-bottom: 3px solid black;
+}
+#sudoku-grid input:nth-child(n+1):nth-child(-n+9) {
+    border-top: 3px solid black;
+}
+#affichageResultat{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#difficulty {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
